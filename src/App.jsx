@@ -3,11 +3,13 @@ import DarkVeil from './blocks/Backgrounds/DarkVeil/DarkVeil'
 import Stepper, { Step } from './blocks/Components/Stepper/Stepper';
 import StepWelcome from './blocks/Components/Stepper/steps/StepWelcome';
 import StepSearch from './blocks/Components/Stepper/steps/StepSearch';
+import StepNumberOfEmails from './blocks/Components/Stepper/steps/StepNumberOfEmails';
 import StepEmail from './blocks/Components/Stepper/steps/StepEmail';
 import StepFinal from './blocks/Components/Stepper/steps/StepFinal';
 
 function App() {
   const [search, setSearch] = useState("");
+  const [numberOfEmails, setNumberOfEmails] = useState(1);
   const [email, setEmail] = useState("");
 
   // Get server URL from Vite env
@@ -25,7 +27,7 @@ function App() {
       body: JSON.stringify({
         chatInput: search,
         email,
-        numberOfEmails: 10,
+        numberOfEmails,
       }),
     });
   };
@@ -62,6 +64,9 @@ function App() {
           </Step>
           <Step>
             <StepSearch search={search} setSearch={setSearch} />
+          </Step>
+          <Step>
+            <StepNumberOfEmails numberOfEmails={numberOfEmails} setNumberOfEmails={setNumberOfEmails} />
           </Step>
           <Step>
             <StepEmail email={email} setEmail={setEmail} />
