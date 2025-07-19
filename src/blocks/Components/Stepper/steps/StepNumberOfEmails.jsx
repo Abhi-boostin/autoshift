@@ -4,7 +4,7 @@ export default function StepNumberOfEmails({ numberOfEmails, setNumberOfEmails }
   const handleChange = (e) => {
     const value = Number(e.target.value);
     if (value > 50) {
-      alert('In free trial you can only send 50 max mails');
+      alert('In free trial you can only send 30 max mails');
       return;
     }
     setNumberOfEmails(value);
@@ -13,15 +13,15 @@ export default function StepNumberOfEmails({ numberOfEmails, setNumberOfEmails }
   return (
     <>
       <h2 className="text-2xl font-bold mb-2">Set Number of Emails</h2>
-      <p className="mb-2">Set the number of mails you wanna extract between 1-50</p>
+      <p className="mb-2">Set the number of mails you wanna extract between 1-30</p>
       <input
         type="number"
         min={1}
-        max={50}
+        max={30}
         value={numberOfEmails}
         onChange={handleChange}
         className="border rounded px-2 py-1 mt-2 w-full max-w-md"
-        placeholder="Enter a number between 1 and 50"
+        placeholder="Enter a number between 1 and 30"
       />
     </>
   );
