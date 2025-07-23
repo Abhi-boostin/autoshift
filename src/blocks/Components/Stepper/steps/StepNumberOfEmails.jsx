@@ -25,4 +25,6 @@ export default function StepNumberOfEmails({ numberOfEmails, setNumberOfEmails }
       />
     </>
   );
-} 
+}
+
+// (No longer used. See StepNumberOfCycles.jsx)
